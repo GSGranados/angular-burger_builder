@@ -1,0 +1,12 @@
+span{
+  font-family: 'Rancho', cursive;
+  margin: auto;
+  font-size: 1.75em;
+  color: white;
+  outline: none;
+}
+
+mat-toolbar{
+  background-color: black;
+}
+
