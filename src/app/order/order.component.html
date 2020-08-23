@@ -1,1 +1,43 @@
-<p>order works!</p>
+<div class="order-image-container">
+  <img src="../../assets/img/burger icon.svg" alt="Main Icon" />
+</div>
+<div class="orderForm">
+  <form (submit)="orderBurger(OrderForm)" #OrderForm="ngForm">
+    <mat-form-field class="example-full-width">
+      <input
+        ngModel
+        #burgerName="ngModel"
+        matInput
+        placeholder="Name Your baby burger"
+        name="burgerName"
+      />
+    </mat-form-field>
+    <div class="tipperSection">
+      <ul>
+        <li>
+          <mat-card>
+            <img src="../../assets/img/onion icon.svg" alt="onion" />
+            <mat-icon>remove</mat-icon>
+            <mat-icon>add</mat-icon>
+          </mat-card>
+        </li>
+        <li>
+          <mat-card>
+            <img src="../../assets/img/lettuce icon.svg" alt="lettuce" />
+            <mat-icon>remove</mat-icon>
+            <mat-icon>add</mat-icon>
+          </mat-card>
+        </li>
+        <li>
+          <mat-card>
+            <img src="../../assets/img/chesse icon.svg" alt="cheese" />
+            <mat-icon>remove</mat-icon>
+            <mat-icon>add</mat-icon>
+          </mat-card>
+        </li>
+      </ul>
+    </div>
+    <button class="orderButton" type="submit">Buy !</button>
+    <button [routerLink]="['/']"  class="homeButton" >Home</button>
+  </form>
+</div>

@@ -2,4 +2,97 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  justify-content: center;
+
+  font-family: "Rancho", cursive;
 }
+
+.order-image-container{
+  display: grid;
+  place-items: center;
+}
+
+.order-image-container img{
+  width: 100%;
+  height: 175px;
+}
+
+.orderForm{
+  width: 100%;
+  text-align: center;
+}
+
+mat-form-field{
+  margin-top: .5rem;
+  width: 80%;
+  font-size: 2em;
+  text-align: center;
+  font-family: "Rancho", cursive;
+}
+
+.tipperSection{
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+li{
+  width: 80%;
+  margin: auto;
+}
+
+
+mat-card img {
+  width: 77px;
+  height: 80px;
+}
+
+mat-icon{
+  font-size: 3.5em;
+  padding: 1rem
+}
+
+.orderButton{
+  padding: 20px;
+  border: none;
+  outline-color: transparent;
+  border-radius: 25px;
+  background-color: #CF6FCB;
+  font-family: "Rancho", cursive;
+  font-size: 1.65em;
+  font-weight: 500;
+  color: white;
+  margin: .4rem;
+  transition: all .45s ease;
+}
+
+.orderButton:hover{
+  color: #CF6FCB;
+  background-color: white;
+}
+
+.homeButton{
+  padding: 20px;
+  border: none;
+  outline-color: transparent;
+  border-radius: 25px;
+  background-color: #C0F28B;
+  font-family: "Rancho", cursive;
+  font-size: 1.65em;
+  font-weight: 500;
+  color: white;
+  margin: .4rem;
+  transition: all .45s ease;
+}
+
+.homeButton:hover{
+  color: #C0F28B;
+  background-color: white;
+
+}
+
