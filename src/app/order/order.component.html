@@ -17,27 +17,36 @@
         <li>
           <mat-card>
             <img src="../../assets/img/onion icon.svg" alt="onion" />
-            <mat-icon>remove</mat-icon>
-            <mat-icon>add</mat-icon>
+            <div class="tipperActions">
+              <mat-icon *ngIf="onionQ > 0" (click)="decreaseOnionQ()">remove</mat-icon>
+              <label  name="onions">{{onionQ}}</label>
+              <mat-icon (click)="increaseOnion()">add</mat-icon>
+            </div>
           </mat-card>
         </li>
         <li>
           <mat-card>
             <img src="../../assets/img/lettuce icon.svg" alt="lettuce" />
-            <mat-icon>remove</mat-icon>
-            <mat-icon>add</mat-icon>
+            <div class="tipperActions">
+              <mat-icon *ngIf="lettuceQ > 0" (click)="decreaseLettuceQ()" >remove</mat-icon>
+              <label name="lettuces">{{lettuceQ}}</label>
+              <mat-icon (click)="increaseLettuceQ()" >add</mat-icon>
+            </div>
           </mat-card>
         </li>
         <li>
           <mat-card>
             <img src="../../assets/img/chesse icon.svg" alt="cheese" />
-            <mat-icon>remove</mat-icon>
-            <mat-icon>add</mat-icon>
+            <div class="tipperActions">
+              <mat-icon *ngIf="chesseQ > 0" (click)="decreaseCheeseQ()">remove</mat-icon>
+              <label name="cheeses">{{chesseQ}}</label>
+              <mat-icon (click)="increaseCheeseQ()">add</mat-icon>
+            </div>
           </mat-card>
         </li>
       </ul>
     </div>
     <button class="orderButton" type="submit">Buy !</button>
-    <button [routerLink]="['/']"  class="homeButton" >Home</button>
+    <button [routerLink]="['/']" class="homeButton">Home</button>
   </form>
 </div>

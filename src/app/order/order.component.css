@@ -1,36 +1,37 @@
-:host{
+:host {
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: center;
-
+  margin: auto;
+  width: 80%;
   font-family: "Rancho", cursive;
 }
 
-.order-image-container{
+.order-image-container {
   display: grid;
   place-items: center;
 }
 
-.order-image-container img{
+.order-image-container img {
   width: 100%;
   height: 175px;
+  padding-top: 1rem;
 }
 
-.orderForm{
+.orderForm {
   width: 100%;
   text-align: center;
 }
 
-mat-form-field{
-  margin-top: .5rem;
-  width: 80%;
+mat-form-field {
+  margin-top: 0.5rem;
+  width: 100%;
   font-size: 2em;
   text-align: center;
   font-family: "Rancho", cursive;
 }
 
-.tipperSection{
+.tipperSection {
   width: 100%;
 }
 
@@ -41,58 +42,76 @@ ul {
   padding: 0;
 }
 
-li{
-  width: 80%;
+li {
+  width: 100%;
   margin: auto;
 }
 
+mat-card {
+  display: flex;
+  justify-content: space-between;
+}
 
 mat-card img {
   width: 77px;
   height: 80px;
 }
 
-mat-icon{
+.tipperActions {
+  display: flex;
+
+}
+
+mat-icon {
   font-size: 3.5em;
-  padding: 1rem
+  padding: 1rem;
+  margin: auto;
+  line-height: 0.5;
+
+}
+label {
+  font-size: 3.5em;
+  padding: 1rem;
+  margin: auto;
+  margin-left: 1rem ;
+  font-family: "Rancho", cursive;
 }
 
-.orderButton{
+.orderButton {
   padding: 20px;
   border: none;
   outline-color: transparent;
   border-radius: 25px;
-  background-color: #CF6FCB;
+  background-color: #cf6fcb;
   font-family: "Rancho", cursive;
   font-size: 1.65em;
   font-weight: 500;
   color: white;
-  margin: .4rem;
-  transition: all .45s ease;
+  margin: 0.4rem;
+  transition: all 0.45s ease;
 }
 
-.orderButton:hover{
-  color: #CF6FCB;
+.orderButton:hover {
+  color: #cf6fcb;
   background-color: white;
 }
 
-.homeButton{
+.homeButton {
   padding: 20px;
   border: none;
   outline-color: transparent;
   border-radius: 25px;
-  background-color: #C0F28B;
+  background-color: #c0f28b;
   font-family: "Rancho", cursive;
   font-size: 1.65em;
   font-weight: 500;
   color: white;
-  margin: .4rem;
-  transition: all .45s ease;
+  margin: 0.4rem;
+  transition: all 0.45s ease;
 }
 
-.homeButton:hover{
-  color: #C0F28B;
+.homeButton:hover {
+  color: #c0f28b;
   background-color: white;
-
 }
 
