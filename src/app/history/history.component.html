@@ -1,26 +1,8 @@
 <div>
-  <ul>
-    <li>
+  <ul *ngIf="orders.length > 0">
+    <li *ngFor="let order of orders">
       <mat-card>
-        Burger Name
-        <button [routerLink]="['/']" class="detailsButton">Details</button>
-      </mat-card>
-    </li>
-    <li>
-      <mat-card>
-        Burger Name
-        <button [routerLink]="['/']" class="detailsButton">Details</button>
-      </mat-card>
-    </li>
-    <li>
-      <mat-card>
-        Burger Name
-        <button [routerLink]="['/']" class="detailsButton">Details</button>
-      </mat-card>
-    </li>
-    <li>
-      <mat-card>
-        Burger Name
+        {{order.name}}
         <button [routerLink]="['/']" class="detailsButton">Details</button>
       </mat-card>
     </li>

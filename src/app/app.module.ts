@@ -16,6 +16,8 @@ import { HistoryComponent } from './history/history.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+//Service
+import {OrderService} from './order/order.service';
 
 
 @NgModule({
@@ -25,7 +27,7 @@ import {MatIconModule} from '@angular/material/icon';
     FooterComponent,
     MenuComponent,
     OrderComponent,
-    HistoryComponent
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
