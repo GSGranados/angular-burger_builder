@@ -15,7 +15,7 @@ export class HistoryComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit(): void {
-    this.orders = this.orderService.getOrders();
+    this.orderService.getOrders();
      this.orderStatusSub = this.orderService.getUpdatedOrderListener().subscribe(orderData => {
       this.orders = orderData;
     })
