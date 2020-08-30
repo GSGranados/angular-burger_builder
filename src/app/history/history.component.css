@@ -1,10 +1,10 @@
-:host{
+:host {
   height: fit-content;
   margin: auto;
   width: 80%;
 }
 
-ul{
+ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -12,27 +12,27 @@ ul{
   width: 100%;
   margin: auto;
 }
-li{
+li {
   margin-top: 1.25rem;
   display: flex;
 }
 
-.separator{
+.separator {
   flex-grow: 1;
 }
 
-mat-card{
+mat-card {
   text-align: center;
   font-family: "Rancho", cursive;
   font-size: 2em;
   border-radius: 25px;
-  padding: 2rem;
-  background-color: #BBF4F8;
+  padding: 1.5rem;
+  background-color: #bbf4f8;
   margin: auto;
   width: 100%;
 }
 
-.detailsButton{
+.detailsButton {
   padding: 10px 12.5px 10px 12.5px;
   border: none;
   outline-color: transparent;
@@ -44,29 +44,95 @@ mat-card{
   color: white;
 }
 
-.actions{
+.actions {
   display: grid;
   place-items: center;
 }
 
-.actions button{
+.actions button {
   padding: 20px;
   border: none;
   outline-color: transparent;
   border-radius: 25px;
-  background-color: #C0F28B;
+  background-color: #c0f28b;
   font-family: "Rancho", cursive;
   font-size: 1.65em;
   font-weight: 500;
   color: white;
-  margin: .4rem;
-  transition: all .45s ease;
+  margin: 0.4rem;
+  transition: all 0.45s ease;
   width: 100%;
-  margin-top: 1rem;;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.actions button:hover{
-  color: #C0F28B;
+.actions button:hover {
+  color: #c0f28b;
   background-color: white;
 }
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 450px) {
+  mat-card {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 768px) {
+  mat-card {
+    font-size: 2.3em;
+  }
+
+  .actions button{
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 800px) {
+  ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  li{
+    flex-basis: 33.33%;
+
+  }
+  mat-card{
+    padding: 3rem;
+    font-size: 1.60em;
+    min-height: 110px;
+  }
+
+  .detailsButton{
+    margin-top: 15px !important;
+  }
+
+  .actions button{
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 992px){
+  mat-card{
+    font-size: 2em;
+  }
+
+  .actions button{
+    font-size: 2.3em;
+    padding: 17px;
+  }
+}
+
+@media (min-width: 1200px){
+  mat-card{
+    font-size: 2.3em;
+  }
+
+  .actions button{
+    font-size: 3em;
+    padding: 30px;
+  }
+}
+
