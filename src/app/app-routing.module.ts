@@ -14,6 +14,10 @@ const routes: Routes = [
     component: OrderComponent
   },
   {
+    path: "order/:orderId",
+    component: OrderComponent
+  },
+  {
     path: "history",
     component: HistoryComponent
   }

@@ -3,7 +3,7 @@
     <li *ngFor="let order of orders">
       <mat-card>
         {{order.name}}
-        <button [routerLink]="['/']" class="detailsButton">Details</button>
+        <button [routerLink]="['/order', order.id]" class="detailsButton">Details</button>
       </mat-card>
     </li>
   </ul>

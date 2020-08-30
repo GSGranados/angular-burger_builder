@@ -10,6 +10,7 @@
         matInput
         placeholder="Name Your baby burger"
         name="burgerName"
+        [value]="name"
       />
     </mat-form-field>
     <div class="tipperSection">
@@ -46,7 +47,8 @@
         </li>
       </ul>
     </div>
-    <button class="orderButton" type="submit">Buy !</button>
+    <button *ngIf="mode ==='create' " class="orderButton" type="submit">Buy !</button>
+    <button *ngIf="mode ==='edit'" class="orderButton" type="submit">Order Again!</button>
     <button [routerLink]="['/']" class="homeButton">Home</button>
   </form>
 </div>

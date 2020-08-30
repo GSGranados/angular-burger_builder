@@ -44,6 +44,24 @@ router.get("",(req,res,next)=>{
       message: "Fetching Orders Failed"
     })
   })
-})
+});
+
+
+//GET AN ORDER
+router.get("/:id", (req, res, next)=>{
+  Order.findById(req.params.id).then(order=>{
+    if(order){
+      res.status(200).json(order);
+    }else{
+      res.status(404).json({
+        message: "Order not found"
+      });
+    }
+  }).catch(error => {
+    res.status(500).json({
+      message: "Fetching Order Failed"
+    })
+  })
+});
 
 module.exports = router;
