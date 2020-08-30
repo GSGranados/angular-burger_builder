@@ -17,8 +17,10 @@ import { HistoryComponent } from './history/history.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
 //Service
 import {OrderService} from './order/order.service';
+import { MessageComponent } from './message/message.component';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import {OrderService} from './order/order.service';
     MenuComponent,
     OrderComponent,
     HistoryComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import {OrderService} from './order/order.service';
     FormsModule,
     MatCardModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [OrderService],
   bootstrap: [AppComponent]

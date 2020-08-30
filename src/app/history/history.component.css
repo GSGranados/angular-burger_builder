@@ -1,8 +1,7 @@
 :host{
-  height: 100%;
+  height: fit-content;
   margin: auto;
   width: 80%;
-  position: relative;
 }
 
 ul{
@@ -63,8 +62,7 @@ mat-card{
   margin: .4rem;
   transition: all .45s ease;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  margin-top: 1rem;;
   margin-bottom: 1rem;
 }
 

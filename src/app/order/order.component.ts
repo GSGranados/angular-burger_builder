@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { OrderService } from './order.service';
 import { Order } from './order.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { MessageComponent } from '../message/message.component';
 
 @Component({
   selector: 'app-order',
@@ -18,14 +20,23 @@ export class OrderComponent implements OnInit, OnDestroy {
   private orderId: string;
   mode: string = 'create';
 
+  //CONSTRUCTOR
   constructor(
     private orderService: OrderService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     //CHECK FOR LOCALSTORAGE
-    console.log(localStorage.getItem("Burger"));
+    let localBurger = localStorage.getItem("Burger");
+    if(this.mode === "create" && localBurger){
+      const burger = JSON.parse(localBurger);
+      this.onionQ = burger.onions;
+      this.lettuceQ = burger.lettuces;
+      this.chesseQ = burger.cheeses;
+      this.cost = burger.cost;
+    }
     //CHECK IF WE ARE ON ORDER AGAIN MODE
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('orderId')) {
@@ -37,7 +48,7 @@ export class OrderComponent implements OnInit, OnDestroy {
           this.onionQ = orderData.onions;
           this.lettuceQ = orderData.lettuces;
           this.chesseQ = orderData.cheeses;
-          this.cost = this.calculateCost(1,this.onionQ,this.lettuceQ,this.chesseQ);
+          this.cost = orderData.cost;
           console.log(this.cost);
         });
       } else {
@@ -60,31 +71,39 @@ export class OrderComponent implements OnInit, OnDestroy {
         this.lettuceQ,
         this.chesseQ
       );
+      this.dialog.open(MessageComponent, {data: {message: "Burger Ordered :)!"}});
+      localStorage.clear();
 
   }
 
   //INCREASE/DECREASE METHODS
   increaseOnion() {
     this.onionQ = this.onionQ + 1;
+    this.cost =this.calculateCost(1,this.onionQ,this.lettuceQ,this.chesseQ);
   }
 
   decreaseOnionQ() {
     this.onionQ = this.onionQ - 1;
+    this.cost =this.calculateCost(1,this.onionQ,this.lettuceQ,this.chesseQ);
   }
   increaseLettuceQ() {
     this.lettuceQ = this.lettuceQ + 1;
+    this.cost =this.calculateCost(1,this.onionQ,this.lettuceQ,this.chesseQ);
   }
 
   decreaseLettuceQ() {
     this.lettuceQ = this.lettuceQ - 1;
+    this.cost =this.calculateCost(1,this.onionQ,this.lettuceQ,this.chesseQ);
   }
 
   increaseCheeseQ() {
     this.chesseQ = this.chesseQ + 1;
+    this.cost =this.calculateCost(1,this.onionQ,this.lettuceQ,this.chesseQ);
   }
 
   decreaseCheeseQ() {
     this.chesseQ = this.chesseQ - 1;
+    this.cost =this.calculateCost(1,this.onionQ,this.lettuceQ,this.chesseQ);
   }
   // END OF INCREASE/DECREASE METHODS
 
@@ -99,8 +118,7 @@ export class OrderComponent implements OnInit, OnDestroy {
   ngOnDestroy(){
     localStorage.setItem("Burger",
        JSON.stringify({
-         name:this.name,
-         cost:this.cost,
+         cost:this.calculateCost(1,this.onionQ,this.lettuceQ,this.chesseQ),
          onions:this.onionQ,
          lettuces:this.lettuceQ,
          cheeses: this.chesseQ
